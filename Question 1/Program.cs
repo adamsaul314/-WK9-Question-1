@@ -16,16 +16,21 @@ namespace Question_1
             Song s4 = new Song("BEAUTIFUL PEOPLE", "ED SHEERAN", 3.15, Genre.Dance);
             Song s5 = new Song("BEAUTIFUL PEOPLE", "ED SHEERAN", 3.15, Genre.Pop);
 
-            List<Song> playList = new List<Song>();
-            playList.Add(s1);
-            playList.Add(s2);
-            playList.Add(s3);
-            playList.Add(s4);
-            playList.Add(s5);
+            List<Song> playlist = new List<Song>();
+            playlist.Add(s1);
+            playlist.Add(s2);
+            playlist.Add(s3);
+            playlist.Add(s4);
+            playlist.Add(s5);
 
-            foreach (Song song in playList)
+            Display(playlist);
+        }
+        private static void Display(List<Song> playlist)
+        {
+            Console.WriteLine("{0,-20}{1,-25}{2,-10}{3,-10}", "Artist","Song","Duration","Genre");
+            foreach (Song song in playlist)
             {
-                Console.WriteLine(song);
+                Console.WriteLine($"{song.Artist,-20}{song.Title,-25}{song.Duration,-10}{song.MusicGenre,-10}");
             }
         }
     }
